@@ -12,13 +12,14 @@ const rawfile=fs.readFileSync('data/data.json');
 let data = JSON.parse(rawfile);
 
 
+
  /**
   * Cette fonction est lancée au démarrage du serveur
   * elle ne prend pas de paramètres et retourne
   * une chaîne de caractères.
   */
 function demarrage(){
-    return "";
+    return "amine";
 }
 
  /**
@@ -28,7 +29,7 @@ function demarrage(){
   * Elle retourne un objet javascript au format json.
   */
 function home(){
-    return undefined;
+    return {"name": "amine"}
 }
 
  /**
@@ -38,7 +39,7 @@ function home(){
   * Elle retourne un objet javascript contenant toutes les données.
   */
 function donnees(){
-    return {};
+    return data;
 }
 
  /**
@@ -50,8 +51,10 @@ function donnees(){
   * Cette liste sera contenu dans la clé communication
   */
 function comms(){
-    return {"communication":[]};
+    return {"communication":data.communication}
+    
 }
+    
 
 
  /**
@@ -63,7 +66,7 @@ function comms(){
   * Cette liste sera contenue dans la clé objects
   */
 function objects(){
-    return {"objects":[]};
+    return {"objects": data["objects"]};
 }
 
  /**
