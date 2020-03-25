@@ -78,7 +78,11 @@ function objects(){
   * Cette liste sera contenu dans la clé types
   */
 function types(){
-    return undefined;
+    let tabl = []
+     for (a in data.types ){
+         tabl.push({a:data.types[a]})  
+     }
+     return {"types":tabl}
 }
 
 /**
@@ -90,7 +94,11 @@ function types(){
  * Cette liste sera contenu dans la clé formats.
  */
 function formats(){
-   return undefined;
+    let tabl = []
+    for (a in data.data_formats){
+        tabl.push({a:data.data_formats[a]})  
+    }
+    return {"formats":tabl}
 }
 
  /**
