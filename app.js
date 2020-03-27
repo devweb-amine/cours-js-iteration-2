@@ -95,7 +95,7 @@ function types(){
  */
 function formats(){
     let tabl = []
-    for (a in data.data_formats){
+    for (const a in data.data_formats){
         tabl.push({a:data.data_formats[a]})  
     }
     return {"formats":tabl}
@@ -110,9 +110,13 @@ function formats(){
   * Cette liste sera contenue dans la clé objects
   */
 function objects_serials(){
-    return {"objects":[]};
+    let tabl = []
+    for (const a of data.objects){
+        tabl.push(a.serial)
+    }
+    console.log (tabl)
+  return {"objects":tabl}
 }
-
 /**
  * Cette fonction est exécutée lorsqu'on demande l'adresse
  * http://localhost:5000/object/serial/<serial> représentée par la route '/object/serial/:serial'
@@ -121,8 +125,17 @@ function objects_serials(){
  * l'objet ayant le serial passé en paramètre.
  */
 function get_object_by_serial(serial){
-    return serial;
+   
+    for (const a of data.objects){
+        if(a.serial == serial){
+            //console.log (serial)
+             return a
+
+        }
+    }
+    return undefined
 }
+
 
 /**
  * Cette fonction est exécutée lorsqu'on demande l'adresse
@@ -132,7 +145,11 @@ function get_object_by_serial(serial){
  * liste des objets ayant l'opérateur passé en paramètre.
  */
 function get_objects_by_operator(operator){
-    return operator;
+    let tabl = []
+    for(const a of data.objects)
+    if(a.object == operator){  
+   
+}
 }
 
 /**
